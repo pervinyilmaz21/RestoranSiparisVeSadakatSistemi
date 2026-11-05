@@ -20,10 +20,10 @@ namespace RestoranSiparisVeSadakatSistemi.Models
         public string Telefon { get; set; }
         public string SifreHash {  get; set; }
         public string Rol { get; set; } = "Musteri";
-        public int Toplampuan {  get; set; }
+        public int Toplampuan { get; set; } = 0;
 
-        public ICollection<Siparis> Siparisler { get; set; }
-        public ICollection<PuanHareket> PuanHareketleri { get; set; }
+        public virtual ICollection<Siparis> Siparisler { get; set; }
+        public virtual ICollection<PuanHareket> PuanHareketleri { get; set; }
     }
     
 }
