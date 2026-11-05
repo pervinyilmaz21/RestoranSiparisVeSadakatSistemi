@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.2\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,9 +36,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,16 +58,94 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="KayitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KayitForm.Designer.cs">
+      <DependentUpon>KayitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202610221048258_IlkKurulum.cs" />
+    <Compile Include="Migrations\202610221048258_IlkKurulum.Designer.cs">
+      <DependentUpon>202610221048258_IlkKurulum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202610221151590_KullaniciGuncelleme.cs" />
+    <Compile Include="Migrations\202610221151590_KullaniciGuncelleme.Designer.cs">
+      <DependentUpon>202610221151590_KullaniciGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202610291938064_MenuVeUrunEkleme.cs" />
+    <Compile Include="Migrations\202610291938064_MenuVeUrunEkleme.Designer.cs">
+      <DependentUpon>202610291938064_MenuVeUrunEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202610292040133_UrunAlanlariGuncelleme.cs" />
+    <Compile Include="Migrations\202610292040133_UrunAlanlariGuncelleme.Designer.cs">
+      <DependentUpon>202610292040133_UrunAlanlariGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202611051525249_SiparisModelGuncelleme.cs" />
+    <Compile Include="Migrations\202611051525249_SiparisModelGuncelleme.Designer.cs">
+      <DependentUpon>202611051525249_SiparisModelGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202611051535302_MusteriModelGuncelleme.cs" />
+    <Compile Include="Migrations\202611051535302_MusteriModelGuncelleme.Designer.cs">
+      <DependentUpon>202611051535302_MusteriModelGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Kategori.cs" />
+    <Compile Include="Models\Musteri.cs" />
+    <Compile Include="Models\PuanHareket.cs" />
+    <Compile Include="Models\Siparis.cs" />
+    <Compile Include="Models\SiparisDetay.cs" />
+    <Compile Include="Models\Urun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SifreSifirlamaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SifreSifirlamaForm.Designer.cs">
+      <DependentUpon>SifreSifirlamaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SifreYardimcisi.cs" />
+    <Compile Include="SiparisYonetimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiparisYonetimForm.Designer.cs">
+      <DependentUpon>SiparisYonetimForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UrunYonetimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrunYonetimForm.Designer.cs">
+      <DependentUpon>UrunYonetimForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KayitForm.resx">
+      <DependentUpon>KayitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202610221048258_IlkKurulum.resx">
+      <DependentUpon>202610221048258_IlkKurulum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202610221151590_KullaniciGuncelleme.resx">
+      <DependentUpon>202610221151590_KullaniciGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202610291938064_MenuVeUrunEkleme.resx">
+      <DependentUpon>202610291938064_MenuVeUrunEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202610292040133_UrunAlanlariGuncelleme.resx">
+      <DependentUpon>202610292040133_UrunAlanlariGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202611051525249_SiparisModelGuncelleme.resx">
+      <DependentUpon>202611051525249_SiparisModelGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202611051535302_MusteriModelGuncelleme.resx">
+      <DependentUpon>202611051535302_MusteriModelGuncelleme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +156,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SifreSifirlamaForm.resx">
+      <DependentUpon>SifreSifirlamaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiparisYonetimForm.resx">
+      <DependentUpon>SiparisYonetimForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrunYonetimForm.resx">
+      <DependentUpon>UrunYonetimForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,5 +179,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.2\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.2\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.2\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.2\build\EntityFramework.targets')" />
 </Project>
