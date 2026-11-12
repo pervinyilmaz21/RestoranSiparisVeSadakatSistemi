@@ -32,17 +32,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtEpostaKullaniciAdi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTelefon2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtYeniSifre = new System.Windows.Forms.TextBox();
             this.btnSifreGuncelle = new System.Windows.Forms.Button();
+            this.txtTelefon2 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(348, 9);
+            this.label1.Location = new System.Drawing.Point(397, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(270, 27);
             this.label1.TabIndex = 0;
@@ -51,6 +52,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(78, 68);
             this.label2.Name = "label2";
@@ -60,8 +62,9 @@
             // 
             // txtEpostaKullaniciAdi
             // 
+            this.txtEpostaKullaniciAdi.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txtEpostaKullaniciAdi.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEpostaKullaniciAdi.Location = new System.Drawing.Point(278, 65);
+            this.txtEpostaKullaniciAdi.Location = new System.Drawing.Point(312, 68);
             this.txtEpostaKullaniciAdi.Multiline = true;
             this.txtEpostaKullaniciAdi.Name = "txtEpostaKullaniciAdi";
             this.txtEpostaKullaniciAdi.Size = new System.Drawing.Size(280, 27);
@@ -71,6 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(192, 135);
             this.label3.Name = "label3";
@@ -78,18 +82,10 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Telefon:";
             // 
-            // txtTelefon2
-            // 
-            this.txtTelefon2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtTelefon2.Location = new System.Drawing.Point(278, 131);
-            this.txtTelefon2.Multiline = true;
-            this.txtTelefon2.Name = "txtTelefon2";
-            this.txtTelefon2.Size = new System.Drawing.Size(280, 28);
-            this.txtTelefon2.TabIndex = 4;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LightSteelBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.Location = new System.Drawing.Point(176, 207);
             this.label4.Name = "label4";
@@ -99,8 +95,9 @@
             // 
             // txtYeniSifre
             // 
+            this.txtYeniSifre.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txtYeniSifre.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtYeniSifre.Location = new System.Drawing.Point(278, 205);
+            this.txtYeniSifre.Location = new System.Drawing.Point(312, 204);
             this.txtYeniSifre.Multiline = true;
             this.txtYeniSifre.Name = "txtYeniSifre";
             this.txtYeniSifre.Size = new System.Drawing.Size(280, 26);
@@ -109,24 +106,38 @@
             // 
             // btnSifreGuncelle
             // 
+            this.btnSifreGuncelle.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnSifreGuncelle.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSifreGuncelle.Location = new System.Drawing.Point(354, 341);
+            this.btnSifreGuncelle.Location = new System.Drawing.Point(388, 341);
             this.btnSifreGuncelle.Name = "btnSifreGuncelle";
             this.btnSifreGuncelle.Size = new System.Drawing.Size(204, 80);
             this.btnSifreGuncelle.TabIndex = 7;
             this.btnSifreGuncelle.Text = "ŞİFREYİ GÜNCELLE";
-            this.btnSifreGuncelle.UseVisualStyleBackColor = true;
+            this.btnSifreGuncelle.UseVisualStyleBackColor = false;
             this.btnSifreGuncelle.Click += new System.EventHandler(this.btnSifreGuncelle_Click);
+            // 
+            // txtTelefon2
+            // 
+            this.txtTelefon2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.txtTelefon2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtTelefon2.Location = new System.Drawing.Point(312, 132);
+            this.txtTelefon2.Mask = "(000) 000 00 00";
+            this.txtTelefon2.Name = "txtTelefon2";
+            this.txtTelefon2.Size = new System.Drawing.Size(280, 27);
+            this.txtTelefon2.TabIndex = 8;
+            this.txtTelefon2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // SifreSifirlamaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RestoranSiparisVeSadakatSistemi.Properties.Resources.f36f2f8c_d3a7_49b3_8a73_b5be86041162;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 674);
+            this.Controls.Add(this.txtTelefon2);
             this.Controls.Add(this.btnSifreGuncelle);
             this.Controls.Add(this.txtYeniSifre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtTelefon2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEpostaKullaniciAdi);
             this.Controls.Add(this.label2);
@@ -144,9 +155,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEpostaKullaniciAdi;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTelefon2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtYeniSifre;
         private System.Windows.Forms.Button btnSifreGuncelle;
+        private System.Windows.Forms.MaskedTextBox txtTelefon2;
     }
 }

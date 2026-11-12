@@ -30,10 +30,19 @@ namespace RestoranSiparisVeSadakatSistemi
                     MessageBox.Show("Lütfen zorunlu alanları doldurun!","Uyarı",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+                // Hafta 8: aynı e-posta ile ikinci kez kayıt olunmasını engelle
+                string eposta = txtKullaniciAdi2.Text.Trim();
+                if (db.Musteriler.Any(m => m.Eposta == eposta))
+                {
+                    MessageBox.Show("Bu e-posta ile zaten bir kayıt var!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 Musteri yeniMusteri = new Musteri
                 {
                     AdSoyad = txtAdSoyad.Text,
-                    Eposta = txtKullaniciAdi2.Text,
+                    Eposta = eposta,
                     Telefon = txtTelefon.Text,
                     SifreHash = SifreYardimcisi.SifreHashle(txtSifre2.Text),
                     Rol = "Musteri",

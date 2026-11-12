@@ -52,8 +52,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.RoyalBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(417, 9);
+            this.label1.Location = new System.Drawing.Point(483, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(263, 27);
             this.label1.TabIndex = 0;
@@ -62,6 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(58, 79);
             this.label2.Name = "label2";
@@ -71,8 +73,9 @@
             // 
             // txtUrunAdi
             // 
+            this.txtUrunAdi.BackColor = System.Drawing.Color.Moccasin;
             this.txtUrunAdi.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtUrunAdi.Location = new System.Drawing.Point(166, 69);
+            this.txtUrunAdi.Location = new System.Drawing.Point(166, 76);
             this.txtUrunAdi.Multiline = true;
             this.txtUrunAdi.Name = "txtUrunAdi";
             this.txtUrunAdi.Size = new System.Drawing.Size(210, 26);
@@ -81,6 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(58, 128);
             this.label3.Name = "label3";
@@ -90,6 +94,7 @@
             // 
             // txtAciklama
             // 
+            this.txtAciklama.BackColor = System.Drawing.Color.Moccasin;
             this.txtAciklama.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtAciklama.Location = new System.Drawing.Point(166, 128);
             this.txtAciklama.Multiline = true;
@@ -100,6 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.Location = new System.Drawing.Point(58, 181);
             this.label4.Name = "label4";
@@ -109,6 +115,7 @@
             // 
             // txtFiyat
             // 
+            this.txtFiyat.BackColor = System.Drawing.Color.Moccasin;
             this.txtFiyat.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtFiyat.Location = new System.Drawing.Point(166, 181);
             this.txtFiyat.Multiline = true;
@@ -119,6 +126,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.Location = new System.Drawing.Point(58, 249);
             this.label5.Name = "label5";
@@ -128,6 +136,7 @@
             // 
             // cmbKategoriler
             // 
+            this.cmbKategoriler.BackColor = System.Drawing.Color.Moccasin;
             this.cmbKategoriler.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbKategoriler.FormattingEnabled = true;
             this.cmbKategoriler.Location = new System.Drawing.Point(166, 249);
@@ -138,6 +147,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.Location = new System.Drawing.Point(58, 314);
             this.label6.Name = "label6";
@@ -158,8 +168,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(768, 69);
+            this.label7.Location = new System.Drawing.Point(653, 76);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 24);
             this.label7.TabIndex = 11;
@@ -167,8 +178,9 @@
             // 
             // dataGridViewUrunler
             // 
+            this.dataGridViewUrunler.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridViewUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUrunler.Location = new System.Drawing.Point(514, 96);
+            this.dataGridViewUrunler.Location = new System.Drawing.Point(639, 128);
             this.dataGridViewUrunler.Name = "dataGridViewUrunler";
             this.dataGridViewUrunler.RowHeadersWidth = 51;
             this.dataGridViewUrunler.RowTemplate.Height = 24;
@@ -178,64 +190,71 @@
             // 
             // btnEkle
             // 
+            this.btnEkle.BackColor = System.Drawing.Color.Moccasin;
             this.btnEkle.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEkle.Location = new System.Drawing.Point(62, 454);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(135, 73);
             this.btnEkle.TabIndex = 13;
             this.btnEkle.Text = "EKLE";
-            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.UseVisualStyleBackColor = false;
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // btnGuncelle
             // 
+            this.btnGuncelle.BackColor = System.Drawing.Color.Moccasin;
             this.btnGuncelle.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGuncelle.Location = new System.Drawing.Point(241, 454);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(135, 73);
             this.btnGuncelle.TabIndex = 14;
             this.btnGuncelle.Text = "GÜNCELLE";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
+            this.btnSil.BackColor = System.Drawing.Color.Moccasin;
             this.btnSil.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSil.Location = new System.Drawing.Point(62, 561);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(135, 73);
             this.btnSil.TabIndex = 15;
             this.btnSil.Text = "SİL";
-            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnTemizle
             // 
+            this.btnTemizle.BackColor = System.Drawing.Color.Moccasin;
             this.btnTemizle.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnTemizle.Location = new System.Drawing.Point(241, 561);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(135, 73);
             this.btnTemizle.TabIndex = 16;
             this.btnTemizle.Text = "TEMİZLE";
-            this.btnTemizle.UseVisualStyleBackColor = true;
+            this.btnTemizle.UseVisualStyleBackColor = false;
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnSipariseGec
             // 
+            this.btnSipariseGec.BackColor = System.Drawing.Color.Moccasin;
             this.btnSipariseGec.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSipariseGec.Location = new System.Drawing.Point(911, 653);
+            this.btnSipariseGec.Location = new System.Drawing.Point(1036, 728);
             this.btnSipariseGec.Name = "btnSipariseGec";
             this.btnSipariseGec.Size = new System.Drawing.Size(231, 38);
             this.btnSipariseGec.TabIndex = 17;
             this.btnSipariseGec.Text = "SİPARİŞE GİT";
-            this.btnSipariseGec.UseVisualStyleBackColor = true;
+            this.btnSipariseGec.UseVisualStyleBackColor = false;
             this.btnSipariseGec.Click += new System.EventHandler(this.btnSipariseGec_Click);
             // 
             // UrunYonetimForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 703);
+            this.BackgroundImage = global::RestoranSiparisVeSadakatSistemi.Properties.Resources._0bdca308_b8aa_4a3c_88b9_0c04193e5b0d;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1279, 809);
             this.Controls.Add(this.btnSipariseGec);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnSil);

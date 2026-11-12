@@ -44,8 +44,8 @@
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Old English Text MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(292, 9);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(170, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(624, 37);
             this.label1.TabIndex = 0;
@@ -54,6 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Wheat;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(26, 84);
             this.label2.Name = "label2";
@@ -63,6 +64,7 @@
             // 
             // txtKullaniciAdi
             // 
+            this.txtKullaniciAdi.BackColor = System.Drawing.Color.MistyRose;
             this.txtKullaniciAdi.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtKullaniciAdi.Location = new System.Drawing.Point(226, 71);
             this.txtKullaniciAdi.Multiline = true;
@@ -73,6 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Wheat;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(166, 151);
             this.label3.Name = "label3";
@@ -82,6 +85,7 @@
             // 
             // txtSifre
             // 
+            this.txtSifre.BackColor = System.Drawing.Color.MistyRose;
             this.txtSifre.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtSifre.Location = new System.Drawing.Point(226, 145);
             this.txtSifre.Name = "txtSifre";
@@ -91,34 +95,39 @@
             // 
             // btnGirisYap
             // 
+            this.btnGirisYap.BackColor = System.Drawing.Color.Moccasin;
             this.btnGirisYap.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnGirisYap.Location = new System.Drawing.Point(56, 583);
             this.btnGirisYap.Name = "btnGirisYap";
-            this.btnGirisYap.Size = new System.Drawing.Size(160, 53);
+            this.btnGirisYap.Size = new System.Drawing.Size(160, 74);
             this.btnGirisYap.TabIndex = 5;
             this.btnGirisYap.Text = "GİRİŞ YAP";
-            this.btnGirisYap.UseVisualStyleBackColor = true;
+            this.btnGirisYap.UseVisualStyleBackColor = false;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
             // 
             // btnKayitOl
             // 
+            this.btnKayitOl.BackColor = System.Drawing.Color.Moccasin;
             this.btnKayitOl.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKayitOl.Location = new System.Drawing.Point(360, 583);
             this.btnKayitOl.Name = "btnKayitOl";
-            this.btnKayitOl.Size = new System.Drawing.Size(160, 53);
+            this.btnKayitOl.Size = new System.Drawing.Size(160, 74);
             this.btnKayitOl.TabIndex = 6;
             this.btnKayitOl.Text = "KAYIT OL";
-            this.btnKayitOl.UseVisualStyleBackColor = true;
+            this.btnKayitOl.UseVisualStyleBackColor = false;
             this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
             // 
             // lnkSifremiUnuttum
             // 
+            this.lnkSifremiUnuttum.ActiveLinkColor = System.Drawing.Color.Black;
             this.lnkSifremiUnuttum.AutoSize = true;
-            this.lnkSifremiUnuttum.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lnkSifremiUnuttum.BackColor = System.Drawing.Color.MistyRose;
+            this.lnkSifremiUnuttum.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lnkSifremiUnuttum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lnkSifremiUnuttum.LinkColor = System.Drawing.Color.Red;
-            this.lnkSifremiUnuttum.Location = new System.Drawing.Point(385, 223);
+            this.lnkSifremiUnuttum.Location = new System.Drawing.Point(367, 222);
             this.lnkSifremiUnuttum.Name = "lnkSifremiUnuttum";
-            this.lnkSifremiUnuttum.Size = new System.Drawing.Size(135, 19);
+            this.lnkSifremiUnuttum.Size = new System.Drawing.Size(153, 24);
             this.lnkSifremiUnuttum.TabIndex = 7;
             this.lnkSifremiUnuttum.TabStop = true;
             this.lnkSifremiUnuttum.Text = "Şifremi Unuttum";
@@ -128,7 +137,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 686);
+            this.BackgroundImage = global::RestoranSiparisVeSadakatSistemi.Properties.Resources.c858610c_5cd6_4a1a_ba9f_73171d753d0f;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(979, 783);
             this.Controls.Add(this.lnkSifremiUnuttum);
             this.Controls.Add(this.btnKayitOl);
             this.Controls.Add(this.btnGirisYap);

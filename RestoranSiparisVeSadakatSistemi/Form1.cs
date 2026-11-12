@@ -43,6 +43,7 @@ namespace RestoranSiparisVeSadakatSistemi
                 {
                     MessageBox.Show($"Hoş geldiniz, {kullanici.AdSoyad}!", "Giriş Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     UrunYonetimForm yonetimForm= new UrunYonetimForm();
+                    yonetimForm.FormClosed += (s, args) => { txtSifre.Clear(); this.Show(); }; // Hafta 8: ürün ekranı kapanınca girişe geri dön
                     yonetimForm.Show();
                     this.Hide();
                 }

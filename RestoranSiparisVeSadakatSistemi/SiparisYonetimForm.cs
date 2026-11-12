@@ -3,7 +3,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using RestoranSiparisVeSadakatSistemi.Data;
-using RestoranSiparisVeSadakatSistemi.Models; // Kendi projenin namespace'i
+using RestoranSiparisVeSadakatSistemi.Models; 
 
 namespace RestoranSiparisVeSadakatSistemi
 {
@@ -36,9 +36,9 @@ namespace RestoranSiparisVeSadakatSistemi
 
         private void UrunleriGetir()
         {
-            using (var db = new AppDbContext()) // Context sınıf adını projene göre kontrol et
+            using (var db = new AppDbContext()) 
             {
-                // Menüdeki ürünleri grid'e dolduruyoruz
+                
                 dgwUrunler.DataSource = db.Urunler.Select(u => new {
                     u.UrunID,
                     u.UrunAdi,
@@ -87,7 +87,7 @@ namespace RestoranSiparisVeSadakatSistemi
             {
                 using (var db = new AppDbContext())
                 {
-                    // 1. Yeni Sipariş Nesnesi Oluşturuyoruz
+                    
                     Siparis yeniSiparis = new Siparis();
                     yeniSiparis.MusteriID = Convert.ToInt32(cmbMusteriler.SelectedValue);
                     yeniSiparis.Tarih = DateTime.Now;
@@ -96,12 +96,12 @@ namespace RestoranSiparisVeSadakatSistemi
 
                     decimal genelToplam = 0;
 
-                    // 2. Sepetteki ürünleri SiparisDetay olarak ekliyoruz
+                    
                     foreach (DataRow row in sepetTablosu.Rows)
                     {
                         int urunId = Convert.ToInt32(row["UrunID"]);
                         int adet = Convert.ToInt32(row["Adet"]);
-                        decimal birimFiyat = Convert.ToInt32(row["BirimFiyat"]); // modelindeki alan adları
+                        decimal birimFiyat = Convert.ToDecimal(row["BirimFiyat"]); 
 
                         SiparisDetay detay = new SiparisDetay
                         {
@@ -116,22 +116,22 @@ namespace RestoranSiparisVeSadakatSistemi
 
                     yeniSiparis.ToplamTutar = genelToplam;
 
-                    // 3. Sadakat Puanı Hesaplama (Örn: Her 10 TL'ye 1 Puan)
+                    
                     int kazanilanPuan = (int)(genelToplam / 10);
                     yeniSiparis.KazanilanPuan = kazanilanPuan;
 
-                    // Müşterinin puanını güncelliyoruz
+                    
                     int musteriId = Convert.ToInt32(cmbMusteriler.SelectedValue);
                     var musteri = db.Musteriler.Find(musteriId);
                     if (musteri != null)
                     {
                         musteri.Toplampuan += kazanilanPuan;
 
-                        // Puan Hareketleri tablosuna kayıt atıyoruz
+                        
                         PuanHareket puanHareketi = new PuanHareket
                         {
                             MusteriID = musteri.MusteriID,
-                            SiparisID = yeniSiparis.SiparisID,
+                            Siparis = yeniSiparis, // ID yerine nesne: EF önce siparişi kaydedip oluşan SiparisID'yi buraya yazar
                             Puan = kazanilanPuan,
                             Tarih = DateTime.Now
                         };
@@ -142,7 +142,7 @@ namespace RestoranSiparisVeSadakatSistemi
                     db.SaveChanges();
 
                     MessageBox.Show("Sipariş başarıyla oluşturuldu ve sadakat puanları işlendi!");
-                    sepetTablosu.Rows.Clear(); // Sepeti sıfırla
+                    sepetTablosu.Rows.Clear(); 
                 }
             }
             catch (Exception ex)
@@ -158,11 +158,17 @@ namespace RestoranSiparisVeSadakatSistemi
                 int urunId = Convert.ToInt32(dgwUrunler.SelectedRows[0].Cells["UrunID"].Value);
                 string urunAdi = dgwUrunler.SelectedRows[0].Cells["UrunAdi"].Value.ToString();
                 decimal fiyat = Convert.ToDecimal(dgwUrunler.SelectedRows[0].Cells["Fiyat"].Value);
-                int adet = Convert.ToInt32(numericUpDownAdet.Value); // NumericUpDown kontrolü olduğunu varsayıyoruz
+                int adet = Convert.ToInt32(numericUpDownAdet.Value); 
+
+                if (adet <= 0) // Hafta 8: adet seçilmeden sepete eklenmesin
+                {
+                    MessageBox.Show("Lütfen 0'dan büyük bir adet girin!");
+                    return;
+                }
 
                 decimal toplamTutar = fiyat * adet;
 
-                // Sepete satır ekle
+                
                 sepetTablosu.Rows.Add(urunId, urunAdi, fiyat, adet, toplamTutar);
             }
             else

@@ -155,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SifreSifirlamaForm.resx">
       <DependentUpon>SifreSifirlamaForm.cs</DependentUpon>
@@ -181,6 +182,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c858610c-5cd6-4a1a-ba9f-73171d753d0f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0bdca308-b8aa-4a3c-88b9-0c04193e5b0d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\55c759af-8bf5-4b18-9346-9f21411a24b4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f36f2f8c-d3a7-49b3-8a73-b5be86041162.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0d941ea2-47b6-40be-8b4a-865ba0a5b5e6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -32,6 +32,7 @@ namespace RestoranSiparisVeSadakatSistemi
             if (string.IsNullOrEmpty(eposta) || string.IsNullOrEmpty(telefon) || string.IsNullOrEmpty(yeniSifre))
             {
                 MessageBox.Show("Lütfen tüm alanları doldurun!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Hafta 8: alan boşsa işlemi durdur
             }
 
             using (var db=new AppDbContext())

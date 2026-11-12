@@ -84,6 +84,11 @@ namespace RestoranSiparisVeSadakatSistemi
                     MessageBox.Show("Lütfen geçerli ve 0'dan büyük bir fiyat giriniz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                if (cmbKategoriler.SelectedValue == null) // Hafta 8: kategori seçilmeden ürün eklenmesin
+                {
+                    MessageBox.Show("Lütfen bir kategori seçin!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 using (var db = new AppDbContext())
                 {
                     var yeniUrun = new Urun
@@ -98,7 +103,7 @@ namespace RestoranSiparisVeSadakatSistemi
                     db.Urunler.Add(yeniUrun);
                     db.SaveChanges();
 
-                    MessageBox.Show("Ürün başarıyla elendi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ürün başarıyla eklendi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     txtUrunAdi.Clear();
                     txtAciklama.Clear();
@@ -129,13 +134,15 @@ namespace RestoranSiparisVeSadakatSistemi
                     if (urun != null)
                     {
                         urun.UrunAdi = txtUrunAdi.Text;
-                        if(decimal.TryParse(txtFiyat.Text,out decimal fiyat))
+                        urun.Aciklama = txtAciklama.Text;   // Hafta 8: açıklama da güncellensin
+                        urun.AktifMi = chkAktif.Checked;    // Hafta 8: aktiflik de güncellensin
+                        if(decimal.TryParse(txtFiyat.Text,out decimal fiyat) && fiyat > 0)
                         {
                             urun.Fiyat = fiyat;
                         }
                         else
                         {
-                            MessageBox.Show("Lütfen geçerli bir fiyat giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Lütfen geçerli ve 0'dan büyük bir fiyat giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                         if (cmbKategoriler.SelectedValue != null && int.TryParse(cmbKategoriler.SelectedValue.ToString(),out int KategoriID))
@@ -217,6 +224,7 @@ namespace RestoranSiparisVeSadakatSistemi
         private void btnSipariseGec_Click(object sender, EventArgs e)
         {
             SiparisYonetimForm SiparisFormu=new SiparisYonetimForm();
+            SiparisFormu.FormClosed += (s, e2) => this.Show(); // Hafta 8: sipariş ekranı kapanınca ürün ekranına geri dön
             SiparisFormu.Show();
             this.Hide();
         }
