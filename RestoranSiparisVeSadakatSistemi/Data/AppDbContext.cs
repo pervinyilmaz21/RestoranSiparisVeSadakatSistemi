@@ -23,6 +23,7 @@ namespace RestoranSiparisVeSadakatSistemi.Data
         public DbSet<Siparis> Siparisler { get; set; }
         public DbSet<SiparisDetay> SiparisDetaylari { get; set; }
         public DbSet<PuanHareket> PuanHareketleri { get; set; }
+        public DbSet<Odeme> Odemeler {  get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -40,6 +40,8 @@
             this.btnSepeteEkle = new System.Windows.Forms.Button();
             this.btnSiparisiTamamla = new System.Windows.Forms.Button();
             this.btnSepetiTemizle = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.mskKartNo = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUrunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwSepet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAdet)).BeginInit();
@@ -187,6 +189,26 @@
             this.btnSepetiTemizle.UseVisualStyleBackColor = false;
             this.btnSepetiTemizle.Click += new System.EventHandler(this.btnSepetiTemizle_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(9, 624);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Kart No:";
+            // 
+            // mskKartNo
+            // 
+            this.mskKartNo.Location = new System.Drawing.Point(144, 624);
+            this.mskKartNo.Mask = "0000 0000 0000 0000";
+            this.mskKartNo.Name = "mskKartNo";
+            this.mskKartNo.Size = new System.Drawing.Size(120, 22);
+            this.mskKartNo.TabIndex = 13;
+            this.mskKartNo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
             // SiparisYonetimForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -194,6 +216,8 @@
             this.BackgroundImage = global::RestoranSiparisVeSadakatSistemi.Properties.Resources._55c759af_8bf5_4b18_9346_9f21411a24b4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1232, 795);
+            this.Controls.Add(this.mskKartNo);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSepetiTemizle);
             this.Controls.Add(this.btnSiparisiTamamla);
             this.Controls.Add(this.btnSepeteEkle);
@@ -231,5 +255,7 @@
         private System.Windows.Forms.Button btnSepeteEkle;
         private System.Windows.Forms.Button btnSiparisiTamamla;
         private System.Windows.Forms.Button btnSepetiTemizle;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox mskKartNo;
     }
 }
