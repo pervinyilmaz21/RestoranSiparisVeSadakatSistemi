@@ -42,6 +42,11 @@
             this.btnSepetiTemizle = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.mskKartNo = new System.Windows.Forms.MaskedTextBox();
+            this.btnOneriAl = new System.Windows.Forms.Button();
+            this.lstOneriler = new System.Windows.Forms.ListBox();
+            this.lblKampanya = new System.Windows.Forms.Label();
+            this.lblOneriBilgi = new System.Windows.Forms.Label();
+            this.btnOneriyiSepeteEkle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUrunler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwSepet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAdet)).BeginInit();
@@ -85,7 +90,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(627, 59);
+            this.label3.Location = new System.Drawing.Point(745, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 24);
             this.label3.TabIndex = 3;
@@ -95,7 +100,7 @@
             // 
             this.dgwSepet.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgwSepet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwSepet.Location = new System.Drawing.Point(631, 91);
+            this.dgwSepet.Location = new System.Drawing.Point(749, 91);
             this.dgwSepet.Name = "dgwSepet";
             this.dgwSepet.RowHeadersWidth = 51;
             this.dgwSepet.RowTemplate.Height = 24;
@@ -209,13 +214,65 @@
             this.mskKartNo.TabIndex = 13;
             this.mskKartNo.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
+            // btnOneriAl
+            // 
+            this.btnOneriAl.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOneriAl.Location = new System.Drawing.Point(888, 635);
+            this.btnOneriAl.Name = "btnOneriAl";
+            this.btnOneriAl.Size = new System.Drawing.Size(171, 61);
+            this.btnOneriAl.TabIndex = 14;
+            this.btnOneriAl.Text = "Öneri Al";
+            this.btnOneriAl.UseVisualStyleBackColor = true;
+            this.btnOneriAl.Click += new System.EventHandler(this.btnOneriAl_Click);
+            // 
+            // lstOneriler
+            // 
+            this.lstOneriler.FormattingEnabled = true;
+            this.lstOneriler.HorizontalScrollbar = true;
+            this.lstOneriler.ItemHeight = 16;
+            this.lstOneriler.Location = new System.Drawing.Point(888, 527);
+            this.lstOneriler.Name = "lstOneriler";
+            this.lstOneriler.Size = new System.Drawing.Size(450, 68);
+            this.lstOneriler.TabIndex = 15;
+            // 
+            // lblKampanya
+            // 
+            this.lblKampanya.Location = new System.Drawing.Point(372, 588);
+            this.lblKampanya.Name = "lblKampanya";
+            this.lblKampanya.Size = new System.Drawing.Size(450, 40);
+            this.lblKampanya.TabIndex = 16;
+            // 
+            // lblOneriBilgi
+            // 
+            this.lblOneriBilgi.ForeColor = System.Drawing.Color.Gray;
+            this.lblOneriBilgi.Location = new System.Drawing.Point(372, 527);
+            this.lblOneriBilgi.Name = "lblOneriBilgi";
+            this.lblOneriBilgi.Size = new System.Drawing.Size(450, 35);
+            this.lblOneriBilgi.TabIndex = 17;
+            // 
+            // btnOneriyiSepeteEkle
+            // 
+            this.btnOneriyiSepeteEkle.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOneriyiSepeteEkle.Location = new System.Drawing.Point(1147, 634);
+            this.btnOneriyiSepeteEkle.Name = "btnOneriyiSepeteEkle";
+            this.btnOneriyiSepeteEkle.Size = new System.Drawing.Size(191, 60);
+            this.btnOneriyiSepeteEkle.TabIndex = 18;
+            this.btnOneriyiSepeteEkle.Text = "Öneriyi Sepete Ekle";
+            this.btnOneriyiSepeteEkle.UseVisualStyleBackColor = true;
+            this.btnOneriyiSepeteEkle.Click += new System.EventHandler(this.btnOneriyiSepeteEkle_Click);
+            // 
             // SiparisYonetimForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RestoranSiparisVeSadakatSistemi.Properties.Resources._55c759af_8bf5_4b18_9346_9f21411a24b4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1232, 795);
+            this.ClientSize = new System.Drawing.Size(1412, 795);
+            this.Controls.Add(this.btnOneriyiSepeteEkle);
+            this.Controls.Add(this.lblOneriBilgi);
+            this.Controls.Add(this.lblKampanya);
+            this.Controls.Add(this.lstOneriler);
+            this.Controls.Add(this.btnOneriAl);
             this.Controls.Add(this.mskKartNo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnSepetiTemizle);
@@ -257,5 +314,10 @@
         private System.Windows.Forms.Button btnSepetiTemizle;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox mskKartNo;
+        private System.Windows.Forms.Button btnOneriAl;
+        private System.Windows.Forms.ListBox lstOneriler;
+        private System.Windows.Forms.Label lblKampanya;
+        private System.Windows.Forms.Label lblOneriBilgi;
+        private System.Windows.Forms.Button btnOneriyiSepeteEkle;
     }
 }

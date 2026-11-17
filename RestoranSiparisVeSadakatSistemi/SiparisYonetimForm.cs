@@ -13,6 +13,8 @@ namespace RestoranSiparisVeSadakatSistemi
         DataTable sepetTablosu = new DataTable();
         private readonly OdemeServisi odemeServisi = new OdemeServisi();
         private readonly BildirimServisi bildirimServisi = new BildirimServisi();
+        private readonly OneriServisi oneriServisi = new OneriServisi();
+        private OneriSonucu sonOneri;
 
         public SiparisYonetimForm()
         {
@@ -247,6 +249,89 @@ namespace RestoranSiparisVeSadakatSistemi
             else
             {
                 MessageBox.Show("Lütfen sepete eklemek için bir ürün seçin!");
+            }
+        }
+
+        private async void btnOneriAl_Click(object sender, EventArgs e)
+        {
+            if (cmbMusteriler.SelectedValue == null)
+            {
+                MessageBox.Show("Lütfen önce bir müşteri seçin!");
+                return;
+            }
+
+            int musteriId = Convert.ToInt32(cmbMusteriler.SelectedValue);
+
+            btnOneriAl.Enabled = false;
+            btnOneriAl.Text = "Hazırlanıyor...";
+            lstOneriler.Items.Clear();
+            lblKampanya.Text = "";
+            lblOneriBilgi.Text = "";
+
+            try
+            {
+                sonOneri = await oneriServisi.OneriAlAsync(musteriId);
+
+                for (int i = 0; i < sonOneri.Urunler.Count; i++)
+                {
+                    lstOneriler.Items.Add(sonOneri.Urunler[i] + " – " + sonOneri.Nedenler[i]);
+                }
+
+                lblKampanya.Text = "Kampanya: " + sonOneri.Kampanya;
+
+                if (sonOneri.YapayZekaMi)
+                {
+                    lblOneriBilgi.Text = "Kaynak: Yapay zekâ (Gemini). " + sonOneri.Bilgi;
+                }
+                else
+                {
+                    lblOneriBilgi.Text = "Kaynak: Yedek öneri. " + sonOneri.Bilgi;
+                }
+
+                if (lstOneriler.Items.Count > 0)
+                {
+                    lstOneriler.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Öneri alınırken hata oluştu: " + ex.Message);
+            }
+            finally
+            {
+                btnOneriAl.Enabled = true;
+                btnOneriAl.Text = "Öneri Al";
+            }
+        }
+
+        private void btnOneriyiSepeteEkle_Click(object sender, EventArgs e)
+        {
+            if (sonOneri == null || lstOneriler.SelectedIndex < 0)
+            {
+                MessageBox.Show("Lütfen listeden bir öneri seçin!");
+                return;
+            }
+
+            string urunAdi = sonOneri.Urunler[lstOneriler.SelectedIndex];
+            int adet = Convert.ToInt32(numericUpDownAdet.Value);
+
+            if (adet <= 0)
+            {
+                MessageBox.Show("Adet en az 1 olmalıdır!");
+                return;
+            }
+
+            using (var db = new AppDbContext())
+            {
+                var urun = db.Urunler.FirstOrDefault(u => u.UrunAdi == urunAdi && u.AktifMi);
+
+                if (urun == null)
+                {
+                    MessageBox.Show("Bu ürün artık menüde bulunmuyor.");
+                    return;
+                }
+
+                sepetTablosu.Rows.Add(urun.UrunID, urun.UrunAdi, urun.Fiyat, adet, urun.Fiyat * adet);
             }
         }
     }

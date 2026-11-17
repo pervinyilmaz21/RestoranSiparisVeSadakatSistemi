@@ -114,6 +114,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BildirimServisi.cs" />
     <Compile Include="Services\OdemeServisi.cs" />
+    <Compile Include="Services\OneriServisi.cs" />
     <Compile Include="SifreSifirlamaForm.cs">
       <SubType>Form</SubType>
     </Compile>
